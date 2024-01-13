@@ -1,17 +1,22 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {AppComponent} from "./app.component";
+import {AuthGuard} from "./@shared/guards/auth.guard";
 
 const routes: Routes = [
   {
     path: '',
-    canActivate: [isAuthorizedGuard],
+    redirectTo: 'authorization',
+    pathMatch: 'full',
+  },
+  {
+    path: 'dashboard',
+    canActivate: [AuthGuard],
     component: AppComponent,
     pathMatch: 'full',
   },
   {
     path: 'authorization',
-    canActivate: [isAuthorizedGuard],
     loadChildren: () =>
       import('./@features/authorization/authorization.module').then((m) => m.AuthorizationModule),
   }
@@ -19,7 +24,6 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  providers: [],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
