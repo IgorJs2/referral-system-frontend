@@ -1,0 +1,18 @@
+:host {
+  flex: 1 0;
+}
+
+.wrapper {
+  display: flex;
+  height: 100%;
+
+  .main {
+    padding-left: 85px;
+    flex: 1;
+    background-color: var(--secondary-bg);
+
+    &.sidebar-active {
+      padding-left: 280px;
+    }
+  }
+}
