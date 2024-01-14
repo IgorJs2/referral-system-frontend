@@ -1,0 +1,92 @@
+<div class="dialog">
+  <mat-tab-group class="mt-6" dynamicHeight animationDuration="0ms">
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <span class="ml-2">{{ "Login" }}</span>
+      </ng-template>
+      <div class="dialog-body" [formGroup]="login_form">
+        <app-input
+          [title]="'Username'"
+          [placeholder]="'Enter username'"
+          formControlName="username"
+        ></app-input>
+        <app-input
+          [title]="'Password'"
+          [placeholder]="'Enter password'"
+          formControlName="password"
+        ></app-input>
+      </div>
+      <footer class="dialog-footer">
+        <app-button
+          [title]="'Confirm'"
+          [disabled]="!login_form.valid"
+          (click)="onSubmit('login')"
+        ></app-button>
+        <p>
+          {{ error }}
+        </p>
+      </footer>
+    </mat-tab>
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <span class="ml-2">{{ "Register" }}</span>
+      </ng-template>
+      <div class="dialog-body" [formGroup]="register_form">
+        <app-input
+          [title]="'Username'"
+          [placeholder]="'Enter username'"
+          formControlName="username"
+        ></app-input>
+        <app-input
+          [title]="'Email'"
+          [placeholder]="'Enter email'"
+          formControlName="email"
+        ></app-input>
+        <app-input
+          [title]="'Password'"
+          [placeholder]="'Enter password'"
+          formControlName="password"
+        ></app-input>
+        <mat-form-field appearance="fill">
+          <mat-label>Choose a date of birth</mat-label>
+          <input
+            matInput
+            [matDatepicker]="picker"
+            formControlName="dateOfBirth"
+          />
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="picker"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Invitation source</mat-label>
+          <mat-select formControlName="source">
+            <mat-option *ngFor="let source of sources" [value]="source.value">
+              {{ source.viewValue }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <app-input
+          *ngIf="isInvitedByRefferal"
+          [title]="'Refferal Username'"
+          [placeholder]="'Enter refferal username'"
+          formControlName="source_referral"
+        ></app-input>
+      </div>
+      <footer class="dialog-footer">
+        <app-button
+          [title]="'Confirm'"
+          [disabled]="!register_form.valid"
+          (click)="onSubmit('register')"
+        ></app-button>
+        <p>
+          {{ error }}
+        </p>
+      </footer>
+    </mat-tab>
+  </mat-tab-group>
+</div>

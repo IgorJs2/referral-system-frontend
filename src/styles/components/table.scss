@@ -1,0 +1,39 @@
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid var(--border);
+  color: var(--primary-text);
+
+  thead {
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+
+    th {
+      padding: 12px;
+      font-size: 16px;
+      font-weight: 400;
+      text-transform: uppercase;
+    }
+  }
+
+  tbody {
+    tr {
+      &:nth-child(even) {
+        background-color: rgba(246, 251, 253, 0.05);
+      }
+
+      td {
+        padding: 10px;
+
+        &:last-child {
+          width: 25%;
+        }
+      }
+    }
+  }
+}
+
+.pagination {
+  text-align: center;
+  margin-top: 20px;
+}

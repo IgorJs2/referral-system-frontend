@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap");
+
+:root {
+  --main-bg: #100e1b;
+  --secondary-bg: #181a27;
+  --third-bg: #23263c;
+  --primary-orange: #e8540f;
+  --primary-gradient: linear-gradient(
+    89.85deg,
+    #ff9f10 14.66%,
+    rgba(255, 145, 16, 0.949187) 36.46%,
+    rgba(255, 131, 16, 0.947917) 46.29%,
+    #ff1e10 88.53%,
+    #ff2d10 100.09%
+  );
+  --disabled-bg: #282828;
+
+  --primary-text: #e5e5e5;
+  --secondary-text: #818398;
+  --error-text: #eb3333;
+  --disabled-text: #939393;
+  --field-disabled: #25273a;
+
+  --border: #394263;
+}
+
+$desktop: 1440px;
+$desktop-sm: 1120px;
+$tablet-lg: 992px;
+$tablet: 768px;
+$mobile: 576px;

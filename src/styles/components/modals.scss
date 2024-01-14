@@ -1,0 +1,79 @@
+.dialog {
+  color: var(--primary-text);
+
+  .dialog-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    background-color: var(--third-bg);
+
+    .dialog-title {
+      font-weight: 400;
+      font-size: 16px;
+    }
+
+    .dialog-close {
+      position: absolute;
+      z-index: 5;
+      top: 11px;
+      right: 17px;
+      width: 15px;
+      height: 15px;
+      cursor: pointer;
+      border: 0;
+      background: none;
+      padding: 0;
+      transition: background-color 0.3s ease-in-out;
+
+      &::after,
+      &::before {
+        position: absolute;
+        top: 0;
+        left: 7px;
+        width: 1px;
+        height: 15px;
+        content: "";
+        background-color: var(--secondary-text);
+      }
+
+      &::before {
+        transform: rotate(45deg);
+      }
+
+      &::after {
+        transform: rotate(-45deg);
+      }
+
+      &:hover {
+        &::after,
+        &::before {
+          background-color: var(--primary-text);
+        }
+      }
+    }
+  }
+
+  .dialog-body {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    padding: 15px;
+    background-color: var(--secondary-bg);
+
+    .form-row {
+      width: 100%;
+
+      .select {
+        width: 100%;
+      }
+    }
+  }
+
+  .dialog-footer {
+    display: flex;
+    column-gap: 20px;
+    padding: 0 15px 15px 15px;
+    background-color: var(--secondary-bg);
+  }
+}

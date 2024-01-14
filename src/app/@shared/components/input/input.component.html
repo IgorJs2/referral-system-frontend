@@ -1,0 +1,17 @@
+<label class="input">
+  <p *ngIf="title" class="title">
+    {{ title }}
+  </p>
+  <input
+    class="field"
+    autocomplete="off"
+    [placeholder]="placeholder"
+    [type]="type"
+    [ngModel]="value"
+    [disabled]="disabled"
+    (blur)="onTouch($event)"
+    [(ngModel)]="value"
+    (ngModelChange)="onModelChange($event)"
+  />
+  <span *ngIf="value && clearable" class="clear" (click)="onClear()"> × </span>
+</label>

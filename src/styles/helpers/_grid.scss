@@ -1,0 +1,24 @@
+@import "variables";
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+
+  @media (min-width: $tablet) {
+    max-width: 720px;
+  }
+
+  @media (min-width: $tablet-lg) {
+    max-width: 960px;
+  }
+
+  @media (min-width: $desktop-sm) {
+    max-width: 1140px;
+  }
+
+  @media (min-width: $desktop) {
+    max-width: 1320px;
+  }
+}

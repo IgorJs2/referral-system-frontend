@@ -1,0 +1,47 @@
+.mdc-tab {
+  --mat-tab-header-inactive-label-text-color: #181a27;
+}
+
+.mdc-tab__ripple::before,
+.mat-mdc-tab .mat-ripple-element,
+.mat-mdc-tab-header-pagination .mat-ripple-element,
+.mat-mdc-tab-link .mat-ripple-element {
+  background-color: transparent;
+}
+
+.mat-mdc-tab:not(.mat-mdc-tab-disabled).mdc-tab--active .mdc-tab__text-label,
+.mat-mdc-tab-link:not(.mat-mdc-tab-disabled).mdc-tab--active
+  .mdc-tab__text-label {
+  color: var(--primary-orange) !important;
+}
+
+.mat-mdc-tab.mdc-tab--active:hover .mdc-tab__text-label {
+  color: var(--primary-orange);
+}
+
+.mat-mdc-tab.mdc-tab--active:focus .mdc-tab__text-label {
+  color: var(--primary-orange);
+}
+
+.mat-mdc-tab.mdc-tab--active .mdc-tab__ripple::before,
+.mat-mdc-tab.mdc-tab--active .mat-ripple-element {
+  background-color: var(--primary-orange);
+}
+
+.mat-mdc-tab:not(.mat-mdc-tab-disabled) .mdc-tab-indicator__content--underline,
+.mat-mdc-tab-link:not(.mat-mdc-tab-disabled)
+  .mdc-tab-indicator__content--underline {
+  border-color: var(--primary-orange);
+}
+
+.mat-mdc-tab .mdc-tab__text-label,
+.mat-mdc-tab-link .mdc-tab__text-label {
+  color: var(--secondary-text) !important;
+}
+
+.mat-mdc-tab.mdc-tab--active:focus,
+.mat-mdc-tab.mdc-tab--active:hover {
+  .mdc-tab-indicator__content--underline {
+    border-color: var(--primary-orange) !important;
+  }
+}

@@ -3,19 +3,18 @@ import { DecimalPipe } from '@angular/common';
 import { AuthorizationComponent } from './authorization.component';
 import { AuthorizationRoutingModule } from './authorization-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {SharedModule} from "../../@shared/shared.module";
+import { SharedModule } from '../../@shared/shared.module';
+import { AuthorizationModalComponent } from './components/authorization-modal/authorization-modal.component';
 
 @NgModule({
-  declarations: [AuthorizationComponent],
+  declarations: [AuthorizationComponent, AuthorizationModalComponent],
   imports: [
     AuthorizationRoutingModule,
     SharedModule,
     ReactiveFormsModule,
     FormsModule,
   ],
-  providers: [
-    DecimalPipe,
-  ],
+  providers: [DecimalPipe],
   exports: [],
 })
 export class AuthorizationModule {}

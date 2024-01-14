@@ -1,0 +1,9 @@
+<button
+  [disabled]="disabled"
+  [ngClass]="{
+    primary: variant === 'primary',
+    secondary: variant === 'secondary'
+  }"
+>
+  {{ title }}
+</button>
