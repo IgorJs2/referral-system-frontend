@@ -38,16 +38,26 @@
           [placeholder]="'Enter username'"
           formControlName="username"
         ></app-input>
+        <div *ngIf="register_form.get('username')?.errors && register_form.get('username')?.touched">
+          <span *ngIf="register_form.get('username')?.errors?.['required']" [style.color]="'red'">Username is required</span>
+        </div>
         <app-input
           [title]="'Email'"
           [placeholder]="'Enter email'"
           formControlName="email"
         ></app-input>
+        <div *ngIf="register_form.get('email')?.errors && register_form.get('email')?.touched">
+          <span *ngIf="register_form.get('email')?.errors?.['required']" [style.color]="'red'">Email is required</span>
+          <span *ngIf="register_form.get('email')?.errors?.['email']" [style.color]="'red'">Invalid email format</span>
+        </div>
         <app-input
           [title]="'Password'"
           [placeholder]="'Enter password'"
           formControlName="password"
         ></app-input>
+        <div *ngIf="register_form.get('password')?.errors && register_form.get('password')?.touched">
+          <span *ngIf="register_form.get('password')?.errors?.['required']" [style.color]="'red'">Password is required</span>
+        </div>
         <mat-form-field appearance="outline">
           <mat-label>Choose a date of birth</mat-label>
           <input
@@ -62,6 +72,9 @@
           ></mat-datepicker-toggle>
           <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
+        <div *ngIf="register_form.get('dateOfBirth')?.errors && register_form.get('dateOfBirth')?.touched">
+          <span *ngIf="register_form.get('dateOfBirth')?.errors?.['required']" [style.color]="'red'">Invalid Date Of Birth</span>
+        </div>
 
         <mat-form-field appearance="outline">
           <mat-label>Invitation source</mat-label>
@@ -77,11 +90,14 @@
           [placeholder]="'Enter refferal username'"
           formControlName="source_referral"
         ></app-input>
+        <div *ngIf="register_form.get('source_referral')?.value == '' && register_form.get('source_referral')?.touched">
+          <span [style.color]="'red'">You must specify referral username</span>
+        </div>
       </div>
       <footer class="dialog-footer">
         <app-button
           [title]="'Confirm'"
-          [disabled]="!register_form.valid"
+          [disabled]="!register_form.valid || (register_form.get('source_referral')?.value == '' && register_form.get('source')?.value == 'by_user')"
           (click)="onSubmit('register')"
         ></app-button>
         <p>

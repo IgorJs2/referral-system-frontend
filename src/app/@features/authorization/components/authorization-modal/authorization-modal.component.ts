@@ -22,7 +22,7 @@ export class AuthorizationModalComponent implements OnInit {
     email: new FormControl('', [Validators.required, Validators.email]),
     password: new FormControl('', [Validators.required]),
     dateOfBirth: new FormControl('', [Validators.required]),
-    source: new FormControl(SOURCES[0], [Validators.required]),
+    source: new FormControl('', [Validators.required]),
     source_referral: new FormControl('', []),
   });
 
