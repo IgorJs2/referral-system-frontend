@@ -39,6 +39,8 @@ $refferal-system-client-theme: mat.define-light-theme(
 
 @import "styles/overrides/mat-tabs";
 @import "styles/overrides/mat-dialog";
+@import "styles/overrides/mat-table";
+@import "styles/overrides/mat-datapicker";
 @import "styles/helpers/variables";
 @import "styles/helpers/grid";
 @import "styles/helpers/typography";

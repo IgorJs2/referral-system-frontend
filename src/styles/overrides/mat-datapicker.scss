@@ -1,0 +1,45 @@
+.mat-focused .mat-form-field-label {
+  /*change color of label*/
+  color: white !important;
+}
+
+.mat-form-field-underline {
+  /*change color of underline*/
+  background-color: white !important;
+}
+
+.mat-form-field-ripple {
+  /*change color of underline when focused*/
+  background-color: white !important;;
+}
+
+ .mat-form-field-label {
+  /*change color of label*/
+  color: white !important;
+}
+
+
+mat-datepicker-toggle {
+  color: white !important;
+}
+
+.mat-hint {
+  color: white !important;
+}
+
+.mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick, .mat-form-field-outline-thick {
+  opacity: 1 !important;
+  color: white !important;
+}
+
+.mat-form-field-appearance-outline:not(.mat-form-field-disabled) .mat-form-field-flex:hover .mat-form-field-outline {
+  color: white !important;
+}
+
+.mat-select-value {
+  color: white;
+}
+
+.mat-select-arrow {
+  color: white;
+}
